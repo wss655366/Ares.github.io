@@ -118,7 +118,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="零度空间" type="application/atom+xml" />
 
 
 
@@ -130,10 +130,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Golang中的数组">
 <meta property="og:url" content="http://yoursite.com/2017/10/30/array/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="零度空间">
 <meta property="og:description" content="+">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-30T15:03:55.788Z">
+<meta property="og:updated_time" content="2017-10-31T12:01:41.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Golang中的数组">
 <meta name="twitter:description" content="+">
@@ -172,7 +172,7 @@
 
 
 
-  <title>Golang中的数组 | Hexo</title>
+  <title>Golang中的数组 | 零度空间</title>
   
 
 
@@ -202,7 +202,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">零度空间</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -342,7 +342,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="零度空间">
     </span>
 
     
@@ -423,33 +423,8 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><br>+<a id="more"></a></excerpt></p>
-<p><the rest="" of="" contents="" |="" 余下全文=""><br><!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 --></the></p>
-<ul>
-<li><a href="#1数组">1.数组</a><ul>
-<li><a href="#11常见声明">1.1常见声明：</a></li>
-<li><a href="#12元素访问">1.2元素访问：</a></li>
-<li><a href="#13值类型">1.3值类型</a></li>
-</ul>
-</li>
-<li><a href="#2数组切片">2.数组切片</a><ul>
-<li><a href="#21创建数组切片">2.1创建数组切片</a></li>
-<li><a href="#22元素遍历">2.2元素遍历</a></li>
-<li><a href="#23动态增加元素">2.3动态增加元素</a></li>
-<li><a href="#24基于数组切片创建数组切片">2.4基于数组切片创建数组切片</a></li>
-<li><a href="#25内容复制">2.5内容复制</a></li>
-<li><a href="#26代码示例">2.6代码示例</a></li>
-</ul>
-</li>
-<li><a href="#3map">3.map</a><ul>
-<li><a href="#31代码示例">3.1代码示例</a></li>
-<li><a href="#32变量声明">3.2变量声明</a></li>
-<li><a href="#33元素赋值">3.3元素赋值</a></li>
-<li><a href="#34元素删除">3.4元素删除</a></li>
-<li><a href="#35元素查找">3.5元素查找</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
+<the rest="" of="" contents="" |="" 余下全文="">    
+
 <h1 id="1-数组"><a href="#1-数组" class="headerlink" title="1.数组"></a>1.数组</h1><h2 id="1-1常见声明："><a href="#1-1常见声明：" class="headerlink" title="1.1常见声明："></a>1.1常见声明：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[32]byte                         //长度32的字节数组</div><div class="line">[2*N] struct &#123;x, y int32&#125;       //复杂类型的数组</div><div class="line">[1000]*float64                  //指针数组</div><div class="line">[3][5]int                       //int类型的二维数组</div></pre></td></tr></table></figure>
 <h2 id="1-2元素访问："><a href="#1-2元素访问：" class="headerlink" title="1.2元素访问："></a>1.2元素访问：</h2><p>通过数组下标访问元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i: = 0; i &lt; len(array): i++ &#123;</div><div class="line">fmt.Println(<span class="string">"Element"</span>,i,<span class="string">"of array is"</span>,array[i])</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>Go语言还提供了一个关键字range，用于便捷地遍历容器中的元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, v := range array &#123;</div><div class="line"> fmt.Println(<span class="string">"Array element["</span>, i, <span class="string">"]="</span>, v)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -469,7 +444,7 @@
 <h2 id="3-3元素赋值"><a href="#3-3元素赋值" class="headerlink" title="3.3元素赋值"></a>3.3元素赋值</h2><p>myMap[“1234”] = PersonInfo{“1”, “Jack”, “Room 101,…”}</p>
 <h2 id="3-4元素删除"><a href="#3-4元素删除" class="headerlink" title="3.4元素删除"></a>3.4元素删除</h2><p>delete(myMap, “1234”)</p>
 <h2 id="3-5元素查找"><a href="#3-5元素查找" class="headerlink" title="3.5元素查找"></a>3.5元素查找</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">value, ok := myMap[<span class="string">"1234"</span>]</div><div class="line"><span class="keyword">if</span> ok &#123; // 找到了</div><div class="line"> // 处理找到的value</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+</the>
       
     </div>
     
