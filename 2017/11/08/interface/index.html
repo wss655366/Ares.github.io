@@ -112,7 +112,7 @@
 
 
 
-  <meta name="keywords" content="Encounters," />
+  <meta name="keywords" content="GO,程序设计," />
 
 
 
@@ -126,21 +126,17 @@
 
 
 <meta name="description" content="+">
-<meta name="keywords" content="Encounters">
+<meta name="keywords" content="GO,程序设计">
 <meta property="og:type" content="article">
-<meta property="og:title" content="013 努力把生活过成自己喜欢的模样">
-<meta property="og:url" content="http://yoursite.com/2017/11/05/13/index.html">
+<meta property="og:title" content="interface">
+<meta property="og:url" content="http://yoursite.com/2017/11/08/interface/index.html">
 <meta property="og:site_name" content="零度空间">
 <meta property="og:description" content="+">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://owxsbpjrr.bkt.clouddn.com/18b85601e7c67c86a0b5e080a3d67382.png">
-<meta property="og:image" content="http://owxsbpjrr.bkt.clouddn.com/11e8cc3345015836256bb3fb779b596d.png">
-<meta property="og:image" content="http://owxsbpjrr.bkt.clouddn.com/f8ab017bfc3725437289b7e65c8c506d.png">
-<meta property="og:updated_time" content="2017-11-06T12:35:36.447Z">
+<meta property="og:updated_time" content="2017-11-08T13:07:34.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="013 努力把生活过成自己喜欢的模样">
+<meta name="twitter:title" content="interface">
 <meta name="twitter:description" content="+">
-<meta name="twitter:image" content="http://owxsbpjrr.bkt.clouddn.com/18b85601e7c67c86a0b5e080a3d67382.png">
 
 
 
@@ -170,13 +166,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/05/13/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/08/interface/"/>
 
 
 
 
 
-  <title>013 努力把生活过成自己喜欢的模样 | 零度空间</title>
+  <title>interface | 零度空间</title>
   
 
 
@@ -356,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/05/13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/interface/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ares">
@@ -373,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">013 努力把生活过成自己喜欢的模样</h1>
+          <h1 class="post-title" itemprop="name headline">interface</h1>
         
 
         <div class="post-meta">
@@ -385,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-05T19:03:14+08:00">
-                2017-11-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T21:05:40+08:00">
+                2017-11-08
               </time>
             
 
@@ -408,8 +404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/异度空间/" itemprop="url" rel="index">
-                    <span itemprop="name">异度空间</span>
+                  <a href="/categories/Program/" itemprop="url" rel="index">
+                    <span itemprop="name">Program</span>
                   </a>
                 </span>
 
@@ -446,15 +442,21 @@
 
       
         <p><excerpt in="" index="" |="" 首页摘要=""><br>+<a id="more"></a></excerpt></p>
-<the rest="" of="" contents="" |="" 余下全文="">
+<p><the rest="" of="" contents="" |="" 余下全文="">    </the></p>
+<h1 id="1-接口Interface"><a href="#1-接口Interface" class="headerlink" title="1.接口Interface"></a>1.接口Interface</h1><p>Interface类型可以定义一组方法，但是这些不需要实现。并且interface不能包含任何变量。<br><br>interface类型默认是一个指针。<br><br>Go 语言里有非常灵活的 接口 概念，通过它可以实现很多面向对象的特性。</p>
+<h2 id="1-1-Interface定义"><a href="#1-1-Interface定义" class="headerlink" title="1.1 Interface定义"></a>1.1 Interface定义</h2><p>可以通过如下格式定义接口：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> Namer interface &#123;</div><div class="line">    Method1(param_list) return_type</div><div class="line">    Method2(param_list) return_type</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的 Namer 是一个 接口类型。<br><br>（按照约定，只包含一个方法的）接口的名字由方法名加 [e]r 后缀组成，例如 Printer、<br><br>Reader、Writer、Logger、Converter 等等。还有一些不常用的方式（当后缀 er 不合适时），<br>比如 Recoverable，此时接口名以 able 结尾，或者以 I 开头.</p>
+<h2 id="1-2-接口嵌套"><a href="#1-2-接口嵌套" class="headerlink" title="1.2 接口嵌套"></a>1.2 接口嵌套</h2><p>一个接口可以嵌套在另外的接口。<br><br>即需要实现2个接口的方法。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> Car interface &#123;</div><div class="line">    NameGet() string</div><div class="line">    Run(n int)</div><div class="line">    Stop()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">type</span> Used interface &#123;</div><div class="line">    Car</div><div class="line">    Cheap()</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="1-3-类型断言"><a href="#1-3-类型断言" class="headerlink" title="1.3 类型断言"></a>1.3 类型断言</h2><p>一个接口类型的变量varI中可以包含任何类型的值，必须有一种方式来检测它的动态类型，<br><br>即运行时在变量中存储的值的实际类型,可以通过类型断言来实现。varI 必须是一个接口变量，<br><br>否则编译器会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> v, ok := varI.(T); ok &#123;  // checked <span class="built_in">type</span> assertion</div><div class="line">    Process(v)</div><div class="line">    <span class="built_in">return</span></div><div class="line">&#125;</div><div class="line">// varI is not of <span class="built_in">type</span> T</div></pre></td></tr></table></figure>
+<p>通过switch判断其类型:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">switch t := areaIntf.(<span class="built_in">type</span>) &#123;</div><div class="line"><span class="keyword">case</span> *Square:</div><div class="line">	fmt.Printf(<span class="string">"Type Square %T with value %v\n"</span>, t, t)</div><div class="line"><span class="keyword">case</span> *Circle:</div><div class="line">	fmt.Printf(<span class="string">"Type Circle %T with value %v\n"</span>, t, t)</div><div class="line"><span class="keyword">case</span> nil:</div><div class="line">	fmt.Printf(<span class="string">"nil value: nothing to check?\n"</span>)</div><div class="line">default:</div><div class="line">	fmt.Printf(<span class="string">"Unexpected type %T\n"</span>, t)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="1-4测试一个值是否实现了某个接口"><a href="#1-4测试一个值是否实现了某个接口" class="headerlink" title="1.4测试一个值是否实现了某个接口"></a>1.4测试一个值是否实现了某个接口</h2><p> 类型断言中的一个特例：假定 v 是一个值，然后我们想测试它是否实现了 Stringer 接口，<bt><br> 可以这样做：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> Stringer interface &#123;</div><div class="line">    String() string</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> sv, ok := v.(Stringer); ok &#123;</div><div class="line">    fmt.Printf(<span class="string">"v implements String(): %s\n"</span>, sv.String()) // note: sv, not v</div><div class="line">&#125;</div></pre></td></tr></table></figure></bt></p>
+<h2 id="1-5空接口"><a href="#1-5空接口" class="headerlink" title="1.5空接口"></a>1.5空接口</h2><p> 空接口或者最小接口 不包含任何方法，它对实现不做任何要求：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">type</span> Any interface &#123;&#125;</div><div class="line"></div><div class="line"> 可以给一个空接口类型的变量 var val interface &#123;&#125; 赋任何类型的值</div></pre></td></tr></table></figure></p>
+<h2 id="1-6-反射"><a href="#1-6-反射" class="headerlink" title="1.6 反射"></a>1.6 反射</h2><p> 反射是通过检查一个接口的值，变量首先被转换成空接口，函数签名：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">func TypeOf(i interface&#123;&#125;) Type</div><div class="line">func ValueOf(i interface&#123;&#125;) Value</div></pre></td></tr></table></figure></p>
+<p>调用反射显示数据的类型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line"></div><div class="line">import (</div><div class="line">    <span class="string">"fmt"</span></div><div class="line">    <span class="string">"reflect"</span></div><div class="line">)</div><div class="line"></div><div class="line">func <span class="function"><span class="title">main</span></span>() &#123;</div><div class="line">    var x float64 = 3.4</div><div class="line">    fmt.Println(<span class="string">"type:"</span>, reflect.TypeOf(x))</div></pre></td></tr></table></figure></p>
+<h2 id="1-7-通过反射修改值"><a href="#1-7-通过反射修改值" class="headerlink" title="1.7 通过反射修改值"></a>1.7 通过反射修改值</h2><p>在这里就需要使用Elem() 函数，这间接的使用指针：v = v.Elem()<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">package main</div><div class="line">import (</div><div class="line">	<span class="string">"fmt"</span></div><div class="line">	<span class="string">"reflect"</span></div><div class="line">)</div><div class="line">func <span class="function"><span class="title">main</span></span>() &#123;</div><div class="line">	var x float64 = 3.4</div><div class="line">	v := reflect.ValueOf(x)</div><div class="line"> unaddressable value</div><div class="line">	fmt.Println(<span class="string">"settability of v:"</span>, v.CanSet())</div><div class="line">	v = reflect.ValueOf(&amp;x)</div><div class="line">	fmt.Println(<span class="string">"type of v:"</span>, v.Type())</div><div class="line">	fmt.Println(<span class="string">"settability of v:"</span>, v.CanSet())</div><div class="line">	v = v.Elem()</div><div class="line">	fmt.Println(<span class="string">"The Elem of v is: "</span>, v)</div><div class="line">	fmt.Println(<span class="string">"settability of v:"</span>, v.CanSet())</div><div class="line">	v.SetFloat(3.1415)</div><div class="line">	fmt.Println(v.Interface())</div><div class="line">	fmt.Println(v)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通过上面的程序，就可以修改x的值了。</p>
 
-<p>我们总会羡慕别人的生活，总觉得别人把生活是自己想要的那种生活方式，看到别人朋友圈晒出去哪玩，最近又做了什么，自己心里也会想这个我也会啊，我也可以的，可是，最终，我们都没有完成，还是一边在拖延中度过，一边在后悔自己不该拖延中度过。我们都可以改变自己适应身边的环境，也可以改变自己适应成功，那么我想我们应该也可以改掉自己拖延的毛病。</p>
-<p><img src="http://owxsbpjrr.bkt.clouddn.com/18b85601e7c67c86a0b5e080a3d67382.png" alt="11"></p>
-<p>今天出去爬山了，去了半山，感觉还是挺有意思的，虽然这边的山普遍都不高，虽然不能说今天收获到了什么，总之，可以散散心，将自己的状态调整到最佳看，面对周一和新的挑战。</p>
-<p><img src="http://owxsbpjrr.bkt.clouddn.com/11e8cc3345015836256bb3fb779b596d.png" alt="22"></p>
-<p><img src="http://owxsbpjrr.bkt.clouddn.com/f8ab017bfc3725437289b7e65c8c506d.png" alt="33"></p>
-<p>慢慢地成长，把生活过程自己想要的模样。我觉得，人生活就是为了让自己有愉悦感，幸福感，成就感。这些东西说难也难，说简单也很简单。每个人理解的方式可能会有所不同，但重要的是一定要有希望，要热爱，和不放弃。</p>
-</the>
       
     </div>
     
@@ -471,7 +473,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Encounters/" rel="tag"># Encounters</a>
+            <a href="/tags/GO/" rel="tag"># GO</a>
+          
+            <a href="/tags/程序设计/" rel="tag"># 程序设计</a>
           
         </div>
       
@@ -484,8 +488,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/02/else/" rel="next" title="Golang中的控制流程">
-                <i class="fa fa-chevron-left"></i> Golang中的控制流程
+              <a href="/2017/11/06/Golang/" rel="next" title="Golang中的缓存库cache2go">
+                <i class="fa fa-chevron-left"></i> Golang中的缓存库cache2go
               </a>
             
           </div>
@@ -493,10 +497,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/05/error/" rel="prev" title="Golang中的错误处理">
-                Golang中的错误处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -579,8 +579,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -679,6 +688,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-接口Interface"><span class="nav-number">1.</span> <span class="nav-text">1.接口Interface</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Interface定义"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Interface定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-接口嵌套"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 接口嵌套</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-类型断言"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 类型断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4测试一个值是否实现了某个接口"><span class="nav-number">1.4.</span> <span class="nav-text">1.4测试一个值是否实现了某个接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5空接口"><span class="nav-number">1.5.</span> <span class="nav-text">1.5空接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-反射"><span class="nav-number">1.6.</span> <span class="nav-text">1.6 反射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-通过反射修改值"><span class="nav-number">1.7.</span> <span class="nav-text">1.7 通过反射修改值</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
