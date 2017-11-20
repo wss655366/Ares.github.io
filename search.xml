@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[我的一生最美好的场景就是遇见你]]></title>
-    <url>%2F2017%2F11%2F13%2Fnana%2F</url>
-    <content type="text"><![CDATA[+ 一直以来都在找那个对的人， 以为那个符合自己条条框框的人，就是那个对的人。直到真正遇到那个对的人，才会发现，那些所谓的要求，根本就是子虚乌有。哪怕是在一起什么事都不做，什么话都不说，十指相扣，一个眼神足以！ 我想，两个人在一起最好的状态就是不累人，不费神，不刻意，不用琢磨，更无须纠结，绝对占有，相对自由，不用担心害怕，因为你知道，对方真的不会走。没有哪两个人在一起就是合适的，总要经过一段时间的磨合，如果知道了对方的缺点，愿意去包容，还愿意在一起，这就是对的人吧！ 总是怕自己变得无趣，恨不得日夜翻书三百章，什么野史趣史都看上一道儿，什么甜话浑话俏皮话都为你学上一遭，恨不能把自己剖开给你看，浑身上下都抖擞着几句话，“我超有趣的” “我可有趣了” “你看看我吧”。 没有用照片记录我们在一起的时光，我想就记在这里吧，多久都不会丢。 很幸运能够于万千人海遇见你，然后相恋，我想，上天还是很眷顾我的，刚好遇见你，在我喜欢你的时候，你刚好也喜欢我。]]></content>
-      <categories>
-        <category>异度空间</category>
-      </categories>
-      <tags>
-        <tag>Encounter</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Golang中的接口]]></title>
     <url>%2F2017%2F11%2F08%2Finterface%2F</url>
     <content type="text"><![CDATA[+ 1.接口InterfaceInterface类型可以定义一组方法，但是这些不需要实现。并且interface不能包含任何变量。interface类型默认是一个指针。Go 语言里有非常灵活的 接口 概念，通过它可以实现很多面向对象的特性。 1.1 Interface定义可以通过如下格式定义接口：12345type Namer interface &#123; Method1(param_list) return_type Method2(param_list) return_type ...&#125; 上面的 Namer 是一个 接口类型。（按照约定，只包含一个方法的）接口的名字由方法名加 [e]r 后缀组成，例如 Printer、Reader、Writer、Logger、Converter 等等。还有一些不常用的方式（当后缀 er 不合适时），比如 Recoverable，此时接口名以 able 结尾，或者以 I 开头. 1.2 接口嵌套一个接口可以嵌套在另外的接口。即需要实现2个接口的方法。12345678910type Car interface &#123; NameGet() string Run(n int) Stop()&#125;type Used interface &#123; Car Cheap()&#125; 1.3 类型断言一个接口类型的变量varI中可以包含任何类型的值，必须有一种方式来检测它的动态类型，即运行时在变量中存储的值的实际类型,可以通过类型断言来实现。varI 必须是一个接口变量，否则编译器会报错。 12345if v, ok := varI.(T); ok &#123; // checked type assertion Process(v) return&#125;// varI is not of type T 通过switch判断其类型:12345678910switch t := areaIntf.(type) &#123;case *Square: fmt.Printf("Type Square %T with value %v\n", t, t)case *Circle: fmt.Printf("Type Circle %T with value %v\n", t, t)case nil: fmt.Printf("nil value: nothing to check?\n")default: fmt.Printf("Unexpected type %T\n", t)&#125; 1.4测试一个值是否实现了某个接口 类型断言中的一个特例：假定 v 是一个值，然后我们想测试它是否实现了 Stringer 接口， 可以这样做：1234567type Stringer interface &#123; String() string&#125;if sv, ok := v.(Stringer); ok &#123; fmt.Printf("v implements String(): %s\n", sv.String()) // note: sv, not v&#125; 1.5空接口 空接口或者最小接口 不包含任何方法，它对实现不做任何要求：123type Any interface &#123;&#125; 可以给一个空接口类型的变量 var val interface &#123;&#125; 赋任何类型的值 1.6 反射 反射是通过检查一个接口的值，变量首先被转换成空接口，函数签名：12func TypeOf(i interface&#123;&#125;) Typefunc ValueOf(i interface&#123;&#125;) Value 调用反射显示数据的类型12345678910package mainimport ( "fmt" "reflect")func main() &#123; var x float64 = 3.4 fmt.Println("type:", reflect.TypeOf(x)) 1.7 通过反射修改值在这里就需要使用Elem() 函数，这间接的使用指针：v = v.Elem()1234567891011121314151617181920package mainimport ( "fmt" "reflect")func main() &#123; var x float64 = 3.4 v := reflect.ValueOf(x) unaddressable value fmt.Println("settability of v:", v.CanSet()) v = reflect.ValueOf(&amp;x) fmt.Println("type of v:", v.Type()) fmt.Println("settability of v:", v.CanSet()) v = v.Elem() fmt.Println("The Elem of v is: ", v) fmt.Println("settability of v:", v.CanSet()) v.SetFloat(3.1415) fmt.Println(v.Interface()) fmt.Println(v)&#125; 通过上面的程序，就可以修改x的值了。]]></content>
